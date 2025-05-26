@@ -8,8 +8,9 @@ module.exports = {
     "./plugins/**/*.{js,ts}",
     "./app.vue",
     "./nuxt.config.{js,ts}",
-    "./utils/**/*.{js,ts}", // Include utilities if they contain classes
+    "./utils/**/*.{js,ts}",
   ],
+  darkMode: 'class',
   theme: {
     extend: {
       // You can define custom colors, fonts, spacing etc. here
@@ -23,5 +24,10 @@ module.exports = {
       },
     },
   },
-  plugins: [],
+  plugins: [
+    require('@tailwindcss/nesting'),
+  ],
+  corePlugins: {
+    preflight: true,
+  },
 }

@@ -1,0 +1,38 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Custom styles */
+@layer components {
+  .nav-link {
+    @apply text-gray-600 dark:text-gray-300 hover:text-green-600 dark:hover:text-green-400 font-medium;
+  }
+
+  .nav-button {
+    @apply px-4 py-2 rounded-md transition duration-200 ease-in-out;
+  }
+
+  .nav-button.border {
+    @apply border border-green-600 text-green-600 dark:border-green-400 dark:text-green-400 hover:bg-green-50 dark:hover:bg-green-900;
+  }
+
+  .nav-button.filled {
+    @apply bg-green-600 text-white hover:bg-green-700;
+  }
+
+  .mobile-link {
+    @apply block w-full text-center text-gray-800 dark:text-gray-100 hover:text-green-600 dark:hover:text-green-400 font-medium py-2;
+  }
+
+  .mobile-button {
+    @apply block w-full text-center px-4 py-2 rounded-md;
+  }
+
+  .mobile-button.border {
+    @apply border border-green-600 text-green-600 dark:border-green-400 dark:text-green-400 hover:bg-green-50 dark:hover:bg-green-900;
+  }
+
+  .mobile-button.filled {
+    @apply bg-green-600 text-white hover:bg-green-700;
+  }
+} 
