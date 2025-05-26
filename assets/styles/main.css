@@ -1,0 +1,25 @@
+/* assets/styles/main.css */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Custom global styles */
+body {
+  @apply font-sans bg-gray-50 text-gray-800;
+}
+
+/* Basic container for consistent page width */
+.container {
+  @apply max-w-7xl mx-auto;
+}
+
+/* Optional: Hide scrollbar for clean design (webkits only) */
+/*
+.no-scrollbar::-webkit-scrollbar {
+    display: none;
+}
+.no-scrollbar {
+    -ms-overflow-style: none;  // IE and Edge
+    scrollbar-width: none;  // Firefox
+}
+*/

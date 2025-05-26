@@ -1,22 +1,30 @@
 <template>
   <input
     :type="type"
-    :placeholder="placeholder"
-    class="border border-gray-300 rounded-md px-3 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500 w-full"
-    v-bind="$attrs"
     :value="modelValue"
-    @input="$emit('update:modelValue', $event.target.value)"
+    @input="$emit('update:modelValue', ($event.target as HTMLInputElement).value)"
+    :placeholder="placeholder"
+    :class="inputClasses"
   />
 </template>
 
 <script setup lang="ts">
-import { defineProps, defineEmits } from 'vue'
+import { computed } from 'vue';
 
-const props = defineProps({
-  modelValue: String,
-  placeholder: String,
-  type: { type: String, default: 'text' },
-})
+type InputType = 'text' | 'email' | 'password' | 'number' | 'search';
 
-const emit = defineEmits(['update:modelValue'])
+const props = withDefaults(defineProps<{
+  modelValue: string | number;
+  type?: InputType;
+  placeholder?: string;
+}>(), {
+  type: 'text',
+  placeholder: '',
+});
+
+const inputClasses = computed(() => {
+  return 'w-full p-3 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-green-500 focus:border-green-500 transition duration-150 ease-in-out text-gray-800';
+});
+
+defineEmits(['update:modelValue']);
 </script>
